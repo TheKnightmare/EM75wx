@@ -1,0 +1,8 @@
+﻿# never commit credentials
+*API-Key*
+*api-key*
+*.key
+*.pem
+*secret*
+*token*
+.env
