@@ -1,0 +1,90 @@
+[operator]
+callsign = "KQ4ODY"
+network = "GHOSTNET"
+region_label = "ETN/WNC/TN/KY/GA/NC"
+max_message_chars = 500
+
+[collection]
+database = "data/hounddog.db"
+max_age_days = 7
+request_timeout_seconds = 20
+max_response_bytes = 5000000
+user_agent = "KQ4ODY-HoundDog/0.1 (set-a-real-contact@example.invalid)"
+
+[[sources]]
+id = "nws-tn"
+kind = "nws_alerts"
+name = "National Weather Service Tennessee"
+url = "https://api.weather.gov/alerts/active?area=TN"
+source_type = "official"
+source_family = "nws"
+enabled = true
+
+[[sources]]
+id = "nws-nc"
+kind = "nws_alerts"
+name = "National Weather Service North Carolina"
+url = "https://api.weather.gov/alerts/active?area=NC"
+source_type = "official"
+source_family = "nws"
+enabled = true
+
+[[sources]]
+id = "nws-ky"
+kind = "nws_alerts"
+name = "National Weather Service Kentucky"
+url = "https://api.weather.gov/alerts/active?area=KY"
+source_type = "official"
+source_family = "nws"
+enabled = true
+
+[[sources]]
+id = "nws-ga"
+kind = "nws_alerts"
+name = "National Weather Service Georgia"
+url = "https://api.weather.gov/alerts/active?area=GA"
+source_type = "official"
+source_family = "nws"
+enabled = true
+
+[[sources]]
+id = "usgs-significant"
+kind = "usgs_geojson"
+name = "USGS Significant Earthquakes"
+url = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson"
+source_type = "official"
+source_family = "usgs"
+enabled = true
+
+[[sources]]
+id = "swpc-alerts"
+kind = "swpc_alerts"
+name = "NOAA Space Weather Prediction Center"
+url = "https://services.swpc.noaa.gov/products/alerts.json"
+source_type = "official"
+source_family = "noaa-swpc"
+enabled = true
+
+[[sources]]
+id = "gdacs"
+kind = "rss"
+name = "Global Disaster Alert and Coordination System"
+url = "https://www.gdacs.org/xml/rss.xml"
+source_type = "official"
+source_family = "gdacs"
+category = "disaster"
+enabled = true
+
+# Community/forum feeds belong in config.local.toml. Give different sites
+# different source_family values; mirrors and reposts must share one family.
+#
+# [[sources]]
+# id = "community-example"
+# kind = "rss"
+# name = "Example monitoring forum"
+# url = "https://example.org/feed.xml"
+# source_type = "community"
+# source_family = "example-origin"
+# category = "chatter"
+# enabled = false
+
