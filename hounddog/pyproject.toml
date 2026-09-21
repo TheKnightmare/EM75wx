@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kq4ody-hounddog"
+version = "0.1.0"
+description = "Provenance-first public-source claim collector for human-reviewed GhostNet traffic"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "KQ4ODY"}]
+dependencies = []
+
+[project.scripts]
+hounddog = "hounddog.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
